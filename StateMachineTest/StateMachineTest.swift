@@ -18,14 +18,13 @@ class TestStateMachine: StateMachine<TestContext> {
     override init() {
         super.init()
         context.history.append("tsm init")
-        let initial = TestStateOne(self)
-        self.failure = initial
-        proceed(to: initial)
+        failure = TestStateOne.self
+        proceed(TestStateOne.self)
     }
 }
 
 class TestState: State<TestContext> {
-    override init(_ m: StateMachine<TestContext>) {
+    required init(_ m: StateMachine<TestContext>) {
         super.init(m)
     }
 }
@@ -35,6 +34,7 @@ class TestStateOne: TestState {
         context.history.append("ts1 enter")
         
         handle(event: "testEvent", with: testEventHandler)
+        handle(event: "failEvent", with: failEventHandler)
     }
     
     override func exit() {
@@ -43,7 +43,12 @@ class TestStateOne: TestState {
     
     func testEventHandler(error: NSError?) {
         context.history.append("ts1 testEvent")
-        machine.proceed(to: TestStateTwo(machine))
+        proceed(TestStateTwo.self)
+    }
+    
+    func failEventHandler(error: NSError?) {
+        context.history.append("ts1 failEvent")
+        fail("because of event")
     }
 }
 
@@ -59,14 +64,15 @@ class TestStateTwo: TestState {
 
 class StateMachineTest: XCTestCase {
     func testTestStateMachineInit() {
+//        let sm = TestStateMachine()
         let sm = TestStateMachine()
         XCTAssertEqual(["tsm init", "ts1 enter"], sm.context.history)
         
-        sm.proceed(to: TestStateTwo(sm))
+        sm.proceed(TestStateTwo.self)
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter"], sm.context.history)
         
         // failure state is initial state
-        sm.fail(because: "why not")
+        sm.fail("why not")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter"], sm.context.history)
         
         // handle expected event
@@ -76,6 +82,10 @@ class StateMachineTest: XCTestCase {
         // unexpected event goes to failure state
         sm.handle(event: "unexpected")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter"], sm.context.history)
+        
+        // Failure from handler
+        sm.handle(event: "failEvent")
+        XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 failEvent", "ts1 exit", "ts1 enter"], sm.context.history)
     }
 }
 

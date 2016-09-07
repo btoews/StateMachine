@@ -16,14 +16,17 @@ protocol ContextProtocol {
     init()
 }
 
-class StateMachine<ContextType: ContextProtocol> {
+class StateMachine<ContextType: ContextProtocol>: NSObject {
     var current: State<ContextType>?
-    var failure: State<ContextType>?
+    var failure: State<ContextType>.Type?
     var context = ContextType()
     
-    var currentName: String { return current != nil ? "\(current)" : "<nil state>" }
+    var currentName: String {
+        if let c = current { return "\(c)" }
+        return "<nil state>"
+    }
     
-    func fail(because message: String) {
+    func fail(message: String) {
         print("Failing at \(currentName) because \(message)")
         
         guard let next = failure else {
@@ -31,18 +34,19 @@ class StateMachine<ContextType: ContextProtocol> {
             return
         }
         
-        proceed(to: next)
+        proceed(next)
     }
     
-    func proceed(to new: State<ContextType>) {
+    func proceed(next: State<ContextType>.Type) {
         do {
             current?.beforeExit()
             try current?.exit()
+            let new = next.init(self)
             current = new
             new.beforeEnter()
             try new.enter()
         } catch {
-            fail(because: "unknwon error")
+            fail("unknwon error")
         }
     }
     
@@ -50,9 +54,9 @@ class StateMachine<ContextType: ContextProtocol> {
         do {
             try current?.handle(event: name, error: error)
         } catch StateError.UnhandledEvent {
-            fail(because: "unhandled '\(name)' event")
+            fail("unhandled '\(name)' event")
         } catch {
-            fail(because: "unknwon error while handling '\(name)' event")
+            fail("unknwon error while handling '\(name)' event")
         }
     }
 }
@@ -62,7 +66,7 @@ class State<ContextType: ContextProtocol> {
     var eventHandlers: [String:(error: NSError?) -> Void] = [:]
     var context: ContextType { return machine.context }
     
-    init(_ m: StateMachine<ContextType>) {
+    required init(_ m: StateMachine<ContextType>) {
         machine = m
     }
     
@@ -77,11 +81,18 @@ class State<ContextType: ContextProtocol> {
     
     // Debugging callback.
     func beforeExit() {
-        print("Exiting \(self)")
     }
     
     // Callback when exiting state.
     func exit() throws {
+    }
+    
+    func proceed(next: State.Type) {
+        machine.proceed(next)
+    }
+    
+    func fail(message: String) {
+        machine.fail(message)
     }
     
     func handle(event name: String, error: NSError? = nil) throws {
