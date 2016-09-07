@@ -26,6 +26,10 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
         return "<nil state>"
     }
     
+    // Callback to reset things that can only happen here.
+    func reset() {
+    }
+    
     func fail(message: String) {
         print("Failing at \(currentName) because \(message)")
         

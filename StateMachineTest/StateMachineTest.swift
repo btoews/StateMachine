@@ -21,6 +21,10 @@ class TestStateMachine: StateMachine<TestContext> {
         failure = TestStateOne.self
         proceed(TestStateOne.self)
     }
+    
+    override func reset() {
+        context.history.append("tsm reset")
+    }
 }
 
 class TestState: State<TestContext> {
@@ -33,8 +37,9 @@ class TestStateOne: TestState {
     override func enter() {
         context.history.append("ts1 enter")
         
-        handle(event: "testEvent", with: testEventHandler)
-        handle(event: "failEvent", with: failEventHandler)
+        handle(event: "testEvent",  with: testEventHandler)
+        handle(event: "failEvent",  with: failEventHandler)
+        handle(event: "resetEvent", with: resetEventHandler)
     }
     
     override func exit() {
@@ -49,6 +54,10 @@ class TestStateOne: TestState {
     func failEventHandler() {
         context.history.append("ts1 failEvent")
         fail("because of event")
+    }
+    
+    func resetEventHandler() {
+        machine.reset()
     }
 }
 
@@ -86,6 +95,10 @@ class StateMachineTest: XCTestCase {
         // Failure from handler
         sm.handle(event: "failEvent")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 failEvent", "ts1 exit", "ts1 enter"], sm.context.history)
+        
+        
+        sm.handle(event: "resetEvent")
+        XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 failEvent", "ts1 exit", "ts1 enter", "tsm reset"], sm.context.history)
     }
 }
 
