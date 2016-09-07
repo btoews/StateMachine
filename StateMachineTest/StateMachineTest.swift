@@ -41,12 +41,12 @@ class TestStateOne: TestState {
         context.history.append("ts1 exit")
     }
     
-    func testEventHandler(error: NSError?) {
+    func testEventHandler() {
         context.history.append("ts1 testEvent")
         proceed(TestStateTwo.self)
     }
     
-    func failEventHandler(error: NSError?) {
+    func failEventHandler() {
         context.history.append("ts1 failEvent")
         fail("because of event")
     }

@@ -50,9 +50,9 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
         }
     }
     
-    func handle(event name: String, error: NSError? = nil) {
+    func handle(event name: String) {
         do {
-            try current?.handle(event: name, error: error)
+            try current?.handle(event: name)
         } catch StateError.UnhandledEvent {
             fail("unhandled '\(name)' event")
         } catch {
@@ -63,7 +63,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
 
 class State<ContextType: ContextProtocol> {
     var machine: StateMachine<ContextType>
-    var eventHandlers: [String:(error: NSError?) -> Void] = [:]
+    var eventHandlers: [String:() -> Void] = [:]
     var context: ContextType { return machine.context }
     
     required init(_ m: StateMachine<ContextType>) {
@@ -97,13 +97,13 @@ class State<ContextType: ContextProtocol> {
     
     func handle(event name: String, error: NSError? = nil) throws {
         if let handler = eventHandlers[name] {
-            handler(error: error)
+            handler()
         } else {
             throw StateError.UnhandledEvent
         }
     }
     
-    func handle(event name: String, with function: (error: NSError?) -> Void) {
+    func handle(event name: String, with function: () -> Void) {
         eventHandlers[name] = function
     }
 }
