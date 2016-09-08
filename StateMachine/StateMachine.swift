@@ -50,7 +50,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
             new.beforeEnter()
             try new.enter()
         } catch {
-            fail("unknwon error")
+            fail("unknown error")
         }
     }
     
@@ -60,7 +60,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
         } catch StateError.UnhandledEvent {
             fail("unhandled '\(name)' event")
         } catch {
-            fail("unknwon error while handling '\(name)' event")
+            fail("unknown error while handling '\(name)' event")
         }
     }
 }
