@@ -21,6 +21,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
     var failure: State<ContextType>.Type?
     var context = ContextType()
     
+    // Name of current state. For debugging.
     var currentName: String {
         if let c = current { return "\(c)" }
         return "<nil state>"
@@ -30,6 +31,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
     func reset() {
     }
     
+    // Go to failure state.
     func fail(message: String) {
         print("Failing at \(currentName) because \(message)")
         
@@ -41,6 +43,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
         proceed(next)
     }
     
+    // Go to the next state.
     func proceed(next: State<ContextType>.Type) {
         do {
             current?.beforeExit()
@@ -54,6 +57,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
         }
     }
     
+    // Send an event to the current state.
     func handle(event name: String) {
         do {
             try current?.handle(event: name)
@@ -91,15 +95,18 @@ class State<ContextType: ContextProtocol> {
     func exit() throws {
     }
     
+    // Go to the next state.
     func proceed(next: State.Type) {
         machine.proceed(next)
     }
     
+    // Go to failure state.
     func fail(message: String) {
         machine.fail(message)
     }
     
-    func handle(event name: String, error: NSError? = nil) throws {
+    // Handle an event, or error out.
+    func handle(event name: String) throws {
         if let handler = eventHandlers[name] {
             handler()
         } else {
@@ -107,6 +114,7 @@ class State<ContextType: ContextProtocol> {
         }
     }
     
+    // Register an event handler.
     func handle(event name: String, with function: () -> Void) {
         eventHandlers[name] = function
     }
