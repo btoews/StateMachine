@@ -19,7 +19,7 @@ protocol ContextProtocol {
 class StateMachine<ContextType: ContextProtocol>: NSObject {
     var current: State<ContextType>?
     var failure: State<ContextType>.Type?
-    var context = ContextType()
+    let context = ContextType()
     
     // Name of current state. For debugging.
     var currentName: String {
@@ -70,7 +70,7 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
 }
 
 class State<ContextType: ContextProtocol> {
-    var machine: StateMachine<ContextType>
+    let machine: StateMachine<ContextType>
     var eventHandlers: [String:() -> Void] = [:]
     var context: ContextType { return machine.context }
     
