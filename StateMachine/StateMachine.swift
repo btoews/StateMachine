@@ -12,7 +12,7 @@ enum StateError: ErrorType {
     case UnhandledEvent
 }
 
-class StateMachine<ContextType: ContextProtocol>: NSObject {
+class StateMachine<ContextType: StateMachineContext>: NSObject {
     var current: State<ContextType>?
     var failure: State<ContextType>.Type?
     let context = ContextType()

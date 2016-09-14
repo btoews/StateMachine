@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ContextProtocol {
-    init()
+class StateMachineContext {
+    required init() {}
 }

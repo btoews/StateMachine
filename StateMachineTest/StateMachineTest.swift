@@ -8,7 +8,7 @@
 
 import XCTest
 
-class TestContext: ContextProtocol {
+class TestContext: StateMachineContext {
     var history = [String]()
     
     required init() {}

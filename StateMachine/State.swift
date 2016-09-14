@@ -8,7 +8,7 @@
 
 import Foundation
 
-class State<ContextType: ContextProtocol> {
+class State<ContextType: StateMachineContext> {
     let machine: StateMachine<ContextType>
     var eventHandlers: [String:() -> Void] = [:]
     var context: ContextType { return machine.context }
