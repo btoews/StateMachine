@@ -13,14 +13,33 @@ enum StateError: ErrorType {
 }
 
 protocol ContextProtocol {
+    var logger:LoggerProtocol? { get set }
+    
     init()
+    init(logger:LoggerProtocol?)
+}
+
+extension ContextProtocol {
+    init(logger l:LoggerProtocol?) {
+        self.init()
+        logger = l ?? PrintLogger()
+    }
+    
+    func log(msg:String)   { logger?.log(msg)   }
+    func warn(msg:String)  { logger?.warn(msg)  }
+    func debug(msg:String) { logger?.debug(msg) }
 }
 
 class StateMachine<ContextType: ContextProtocol>: NSObject {
     var current: State<ContextType>?
     var failure: State<ContextType>.Type?
-    let context = ContextType()
+    var context: ContextType
     
+    init(logger:LoggerProtocol? = nil) {
+        context = ContextType(logger: logger)
+        super.init()
+    }
+
     // Name of current state. For debugging.
     var currentName: String {
         if let c = current { return "\(c)" }
@@ -33,10 +52,10 @@ class StateMachine<ContextType: ContextProtocol>: NSObject {
     
     // Go to failure state.
     func fail(message: String) {
-        print("Failing at \(currentName) because \(message)")
+        context.debug("Failing at \(currentName) because \(message)")
         
         guard let next = failure else {
-            print("No failure state. State machine finished.")
+            context.debug("No failure state. State machine finished.")
             return
         }
         
@@ -80,7 +99,7 @@ class State<ContextType: ContextProtocol> {
     
     // Debugging callback.
     func beforeEnter() {
-        print("Entering \(self)")
+        context.debug("Entering \(self)")
     }
     
     // Callback when entering state.
