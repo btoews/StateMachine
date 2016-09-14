@@ -10,6 +10,10 @@
 		F7619FE81D7FAD99002C8260 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7619FE71D7FAD99002C8260 /* StateMachine.swift */; };
 		F7619FF01D7FAE24002C8260 /* StateMachineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7619FEF1D7FAE24002C8260 /* StateMachineTest.swift */; };
 		F7619FF51D7FAE2B002C8260 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7619FE71D7FAD99002C8260 /* StateMachine.swift */; };
+		F7B50A1D1D89EA1C005C124A /* ContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1C1D89EA1C005C124A /* ContextProtocol.swift */; };
+		F7B50A1E1D89EA28005C124A /* ContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1C1D89EA1C005C124A /* ContextProtocol.swift */; };
+		F7B50A201D89EA3F005C124A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1F1D89EA3F005C124A /* State.swift */; };
+		F7B50A211D89EA3F005C124A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1F1D89EA3F005C124A /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +34,8 @@
 		F7619FED1D7FAE24002C8260 /* StateMachineTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StateMachineTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7619FEF1D7FAE24002C8260 /* StateMachineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineTest.swift; sourceTree = "<group>"; };
 		F7619FF11D7FAE24002C8260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7B50A1C1D89EA1C005C124A /* ContextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextProtocol.swift; sourceTree = "<group>"; };
+		F7B50A1F1D89EA3F005C124A /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				F7619FE71D7FAD99002C8260 /* StateMachine.swift */,
+				F7B50A1F1D89EA3F005C124A /* State.swift */,
+				F7B50A1C1D89EA1C005C124A /* ContextProtocol.swift */,
 			);
 			path = StateMachine;
 			sourceTree = "<group>";
@@ -173,6 +181,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7619FE81D7FAD99002C8260 /* StateMachine.swift in Sources */,
+				F7B50A1D1D89EA1C005C124A /* ContextProtocol.swift in Sources */,
+				F7B50A201D89EA3F005C124A /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,8 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B50A1E1D89EA28005C124A /* ContextProtocol.swift in Sources */,
 				F7619FF01D7FAE24002C8260 /* StateMachineTest.swift in Sources */,
 				F7619FF51D7FAE2B002C8260 /* StateMachine.swift in Sources */,
+				F7B50A211D89EA3F005C124A /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +407,7 @@
 				F7619FE61D7FAD89002C8260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7619FF21D7FAE24002C8260 /* Build configuration list for PBXNativeTarget "StateMachineTest" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +416,7 @@
 				F7619FF41D7FAE24002C8260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
