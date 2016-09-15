@@ -14,8 +14,8 @@
 		F7B50A1E1D89EA28005C124A /* StateMachineContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */; };
 		F7B50A201D89EA3F005C124A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1F1D89EA3F005C124A /* State.swift */; };
 		F7B50A211D89EA3F005C124A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1F1D89EA3F005C124A /* State.swift */; };
-		F7B50A231D89EAB4005C124A /* StatusDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A221D89EAB4005C124A /* StatusDelegateProtocol.swift */; };
-		F7B50A241D89EAB4005C124A /* StatusDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A221D89EAB4005C124A /* StatusDelegateProtocol.swift */; };
+		F7C0F4BB1D8A06E300D07D05 /* StatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */; };
+		F7C0F4BC1D8A06F900D07D05 /* StatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +38,7 @@
 		F7619FF11D7FAE24002C8260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachineContext.swift; sourceTree = "<group>"; };
 		F7B50A1F1D89EA3F005C124A /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		F7B50A221D89EAB4005C124A /* StatusDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDelegateProtocol.swift; sourceTree = "<group>"; };
+		F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			children = (
 				F7619FE71D7FAD99002C8260 /* StateMachine.swift */,
 				F7B50A1F1D89EA3F005C124A /* State.swift */,
-				F7B50A221D89EAB4005C124A /* StatusDelegateProtocol.swift */,
+				F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */,
 				F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */,
 			);
 			path = StateMachine;
@@ -185,8 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7619FE81D7FAD99002C8260 /* StateMachine.swift in Sources */,
-				F7B50A231D89EAB4005C124A /* StatusDelegateProtocol.swift in Sources */,
 				F7B50A1D1D89EA1C005C124A /* StateMachineContext.swift in Sources */,
+				F7C0F4BB1D8A06E300D07D05 /* StatusProtocol.swift in Sources */,
 				F7B50A201D89EA3F005C124A /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,8 +198,8 @@
 				F7B50A1E1D89EA28005C124A /* StateMachineContext.swift in Sources */,
 				F7619FF01D7FAE24002C8260 /* StateMachineTest.swift in Sources */,
 				F7619FF51D7FAE2B002C8260 /* StateMachine.swift in Sources */,
-				F7B50A241D89EAB4005C124A /* StatusDelegateProtocol.swift in Sources */,
 				F7B50A211D89EA3F005C124A /* State.swift in Sources */,
+				F7C0F4BC1D8A06F900D07D05 /* StatusProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

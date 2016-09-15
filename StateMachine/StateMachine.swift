@@ -8,19 +8,18 @@
 
 import Foundation
 
-enum StateError: ErrorType {
-    case UnhandledEvent
-}
-
-class StateMachine<ContextType: StateMachineContext>: NSObject {
-    var current: State<ContextType>?
-    var failure: State<ContextType>.Type?
+class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
+    typealias StateType  = State<ContextType, StatusType>
+    typealias Subscriber = (status: StatusType) -> Void
+    
+    var current: StateType?
+    var failure: StateType.Type?
+    var subscribers: [Subscriber] = []
     let context = ContextType()
     
     // Name of current state. For debugging.
     var currentName: String {
-        if let c = current { return "\(c)" }
-        return "<nil state>"
+        return current == nil ? "<nil state>" : "\(current)"
     }
     
     // Callback to reset things that can only happen here.
@@ -40,27 +39,33 @@ class StateMachine<ContextType: StateMachineContext>: NSObject {
     }
     
     // Go to the next state.
-    func proceed(next: State<ContextType>.Type) {
-        do {
-            current?.beforeExit()
-            try current?.exit()
-            let new = next.init(self)
-            current = new
-            new.beforeEnter()
-            try new.enter()
-        } catch {
-            fail("unknown error")
+    func proceed(next: StateType.Type) {
+        current?.exit()
+        let new = next.init(self)
+        current = new
+        new.enter()
+    }
+    
+    // Subscribe to status updates from this machine.
+    func subscribe(subscriber: Subscriber) {
+        subscribers.append(subscriber)
+    }
+    
+    // Notify subscribers about a status update.
+    func statusUpdate(status: StatusType) {
+        subscribers.forEach() { subscriber in
+            subscriber(status: status)
         }
     }
     
     // Send an event to the current state.
     func handle(event name: String) {
-        do {
-            try current?.handle(event: name)
-        } catch StateError.UnhandledEvent {
+        guard let state = current else { return }
+        
+        if let handler = state.eventHandlers[name] {
+            handler()
+        } else {
             fail("unhandled '\(name)' event")
-        } catch {
-            fail("unknown error while handling '\(name)' event")
         }
     }
 }

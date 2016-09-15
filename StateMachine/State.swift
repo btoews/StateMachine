@@ -8,31 +8,23 @@
 
 import Foundation
 
-class State<ContextType: StateMachineContext> {
-    let machine: StateMachine<ContextType>
-    var eventHandlers: [String:() -> Void] = [:]
+class State<ContextType: StateMachineContext, StatusType> {
+    typealias MachineType  = StateMachine<ContextType, StatusType>
+    typealias EventHandler = () -> Void
+    
+    let machine: MachineType
+    var eventHandlers: [String:EventHandler] = [:]
     var context: ContextType { return machine.context }
     
-    required init(_ m: StateMachine<ContextType>) {
+    required init(_ m: MachineType) {
         machine = m
     }
     
-    // Debugging callback.
-    func beforeEnter() {
-        print("Entering \(self)")
-    }
-    
     // Callback when entering state.
-    func enter() throws {
-    }
-    
-    // Debugging callback.
-    func beforeExit() {
-    }
-    
+    func enter() {}
+ 
     // Callback when exiting state.
-    func exit() throws {
-    }
+    func exit() {}
     
     // Go to the next state.
     func proceed(next: State.Type) {
@@ -44,17 +36,13 @@ class State<ContextType: StateMachineContext> {
         machine.fail(message)
     }
     
-    // Handle an event, or error out.
-    func handle(event name: String) throws {
-        if let handler = eventHandlers[name] {
-            handler()
-        } else {
-            throw StateError.UnhandledEvent
-        }
+    // Notify machine subscribers about a status update.
+    func statusUpdate(status: StatusType) {
+        machine.statusUpdate(status)
     }
     
     // Register an event handler.
-    func handle(event name: String, with function: () -> Void) {
+    func handles(event name: String, with function: EventHandler) {
         eventHandlers[name] = function
     }
 }

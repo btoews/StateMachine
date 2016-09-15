@@ -14,12 +14,16 @@ class TestContext: StateMachineContext {
     required init() {}
 }
 
-class TestStateMachine: StateMachine<TestContext> {
+enum TestStatus {
+    case Good
+    case Bad
+}
+
+class TestStateMachine: StateMachine<TestContext, TestStatus> {
     override init() {
         super.init()
         context.history.append("tsm init")
         failure = TestStateOne.self
-        proceed(TestStateOne.self)
     }
     
     override func reset() {
@@ -27,8 +31,8 @@ class TestStateMachine: StateMachine<TestContext> {
     }
 }
 
-class TestState: State<TestContext> {
-    required init(_ m: StateMachine<TestContext>) {
+class TestState: State<TestContext, TestStatus> {
+    required init(_ m: MachineType) {
         super.init(m)
     }
 }
@@ -37,18 +41,19 @@ class TestStateOne: TestState {
     override func enter() {
         context.history.append("ts1 enter")
         
-        handle(event: "testEvent",  with: testEventHandler)
-        handle(event: "failEvent",  with: failEventHandler)
-        handle(event: "resetEvent", with: resetEventHandler)
+        handles(event: "testEvent",  with: testEventHandler)
+        handles(event: "failEvent",  with: failEventHandler)
+        handles(event: "resetEvent", with: resetEventHandler)
     }
     
     override func exit() {
         context.history.append("ts1 exit")
+        statusUpdate(.Bad)
     }
     
     func testEventHandler() {
         context.history.append("ts1 testEvent")
-        proceed(TestStateTwo.self)
+        proceed(TestStateTwo)
     }
     
     func failEventHandler() {
@@ -68,25 +73,37 @@ class TestStateTwo: TestState {
     
     override func exit() {
         context.history.append("ts2 exit")
+        statusUpdate(.Good)
     }
 }
 
 class StateMachineTest: XCTestCase {
     func testTestStateMachineInit() {
-//        let sm = TestStateMachine()
+        var statusHistory:[TestStatus] = []
+        
         let sm = TestStateMachine()
+        XCTAssertEqual(["tsm init"], sm.context.history)
+        
+        sm.subscribe() { status in
+            statusHistory.append(status)
+        }
+        
+        sm.proceed(TestStateOne)
         XCTAssertEqual(["tsm init", "ts1 enter"], sm.context.history)
         
-        sm.proceed(TestStateTwo.self)
+        sm.proceed(TestStateTwo)
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter"], sm.context.history)
+        XCTAssertEqual([TestStatus.Bad], statusHistory)
         
         // failure state is initial state
         sm.fail("why not")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter"], sm.context.history)
+        XCTAssertEqual([TestStatus.Bad, TestStatus.Good], statusHistory)
         
         // handle expected event
         sm.handle(event: "testEvent")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter"], sm.context.history)
+        XCTAssertEqual([TestStatus.Bad, TestStatus.Good, TestStatus.Bad], statusHistory)
         
         // unexpected event goes to failure state
         sm.handle(event: "unexpected")
