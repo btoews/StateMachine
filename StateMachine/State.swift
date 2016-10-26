@@ -27,22 +27,22 @@ class State<ContextType: StateMachineContext, StatusType> {
     func exit() {}
     
     // Go to the next state.
-    func proceed(next: State.Type) {
+    func proceed(_ next: State.Type) {
         machine.proceed(next)
     }
     
     // Go to failure state.
-    func fail(message: String) {
+    func fail(_ message: String) {
         machine.fail(message)
     }
     
     // Notify machine subscribers about a status update.
-    func statusUpdate(status: StatusType) {
+    func statusUpdate(_ status: StatusType) {
         machine.statusUpdate(status)
     }
     
     // Register an event handler.
-    func handles(event name: String, with function: EventHandler) {
+    func handles(event name: String, with function: @escaping EventHandler) {
         eventHandlers[name] = function
     }
 }

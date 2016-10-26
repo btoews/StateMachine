@@ -15,8 +15,8 @@ class TestContext: StateMachineContext {
 }
 
 enum TestStatus {
-    case Good
-    case Bad
+    case good
+    case bad
 }
 
 class TestStateMachine: StateMachine<TestContext, TestStatus> {
@@ -48,12 +48,12 @@ class TestStateOne: TestState {
     
     override func exit() {
         context.history.append("ts1 exit")
-        statusUpdate(.Bad)
+        statusUpdate(.bad)
     }
     
     func testEventHandler() {
         context.history.append("ts1 testEvent")
-        proceed(TestStateTwo)
+        proceed(TestStateTwo.self)
     }
     
     func failEventHandler() {
@@ -73,7 +73,7 @@ class TestStateTwo: TestState {
     
     override func exit() {
         context.history.append("ts2 exit")
-        statusUpdate(.Good)
+        statusUpdate(.good)
     }
 }
 
@@ -88,22 +88,22 @@ class StateMachineTest: XCTestCase {
             statusHistory.append(status)
         }
         
-        sm.proceed(TestStateOne)
+        sm.proceed(TestStateOne.self)
         XCTAssertEqual(["tsm init", "ts1 enter"], sm.context.history)
         
-        sm.proceed(TestStateTwo)
+        sm.proceed(TestStateTwo.self)
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter"], sm.context.history)
-        XCTAssertEqual([TestStatus.Bad], statusHistory)
+        XCTAssertEqual([TestStatus.bad], statusHistory)
         
         // failure state is initial state
         sm.fail("why not")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter"], sm.context.history)
-        XCTAssertEqual([TestStatus.Bad, TestStatus.Good], statusHistory)
+        XCTAssertEqual([TestStatus.bad, TestStatus.good], statusHistory)
         
         // handle expected event
         sm.handle(event: "testEvent")
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter"], sm.context.history)
-        XCTAssertEqual([TestStatus.Bad, TestStatus.Good, TestStatus.Bad], statusHistory)
+        XCTAssertEqual([TestStatus.bad, TestStatus.good, TestStatus.bad], statusHistory)
         
         // unexpected event goes to failure state
         sm.handle(event: "unexpected")

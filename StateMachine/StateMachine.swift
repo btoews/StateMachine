@@ -10,7 +10,7 @@ import Foundation
 
 class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
     typealias StateType  = State<ContextType, StatusType>
-    typealias Subscriber = (status: StatusType) -> Void
+    typealias Subscriber = (_ status: StatusType) -> Void
     
     var current: StateType?
     var failure: StateType.Type?
@@ -27,7 +27,7 @@ class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
     }
     
     // Go to failure state.
-    func fail(message: String) {
+    func fail(_ message: String) {
         print("Failing at \(currentName) because \(message)")
         
         guard let next = failure else {
@@ -39,7 +39,7 @@ class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
     }
     
     // Go to the next state.
-    func proceed(next: StateType.Type) {
+    func proceed(_ next: StateType.Type) {
         current?.exit()
         let new = next.init(self)
         current = new
@@ -47,14 +47,14 @@ class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
     }
     
     // Subscribe to status updates from this machine.
-    func subscribe(subscriber: Subscriber) {
+    func subscribe(_ subscriber: @escaping Subscriber) {
         subscribers.append(subscriber)
     }
     
     // Notify subscribers about a status update.
-    func statusUpdate(status: StatusType) {
+    func statusUpdate(_ status: StatusType) {
         subscribers.forEach() { subscriber in
-            subscriber(status: status)
+            subscriber(status)
         }
     }
     
