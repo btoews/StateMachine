@@ -7,106 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7619FE81D7FAD99002C8260 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7619FE71D7FAD99002C8260 /* StateMachine.swift */; };
-		F7619FF01D7FAE24002C8260 /* StateMachineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7619FEF1D7FAE24002C8260 /* StateMachineTest.swift */; };
-		F7619FF51D7FAE2B002C8260 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7619FE71D7FAD99002C8260 /* StateMachine.swift */; };
-		F7B50A1D1D89EA1C005C124A /* StateMachineContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */; };
-		F7B50A1E1D89EA28005C124A /* StateMachineContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */; };
-		F7B50A201D89EA3F005C124A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1F1D89EA3F005C124A /* State.swift */; };
-		F7B50A211D89EA3F005C124A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B50A1F1D89EA3F005C124A /* State.swift */; };
-		F7C0F4BB1D8A06E300D07D05 /* StatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */; };
-		F7C0F4BC1D8A06F900D07D05 /* StatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */; };
+		F796D58A1DC12D370031FEE5 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796D5891DC12D370031FEE5 /* State.swift */; };
+		F796D58C1DC12D620031FEE5 /* StateMachineContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796D58B1DC12D620031FEE5 /* StateMachineContext.swift */; };
+		_LinkFileRef_StateMachine_via_StateMachineTests /* StateMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_StateMachine" /* StateMachine.framework */; };
+		__src_cc_ref_Sources/StateMachine.swift /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/StateMachine.swift /* StateMachine.swift */; };
+		__src_cc_ref_Tests/StateMachineTests/StateMachineTests.swift /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/StateMachineTests/StateMachineTests.swift /* StateMachineTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		F7619FDD1D7FAD89002C8260 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+/* Begin PBXContainerItemProxy section */
+		F796D5881DC12CF60031FEE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_StateMachine";
+			remoteInfo = StateMachine;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F7619FDF1D7FAD89002C8260 /* StateMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StateMachine; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7619FE71D7FAD99002C8260 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
-		F7619FED1D7FAE24002C8260 /* StateMachineTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StateMachineTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7619FEF1D7FAE24002C8260 /* StateMachineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineTest.swift; sourceTree = "<group>"; };
-		F7619FF11D7FAE24002C8260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachineContext.swift; sourceTree = "<group>"; };
-		F7B50A1F1D89EA3F005C124A /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusProtocol.swift; sourceTree = "<group>"; };
+		F796D5891DC12D370031FEE5 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		F796D58B1DC12D620031FEE5 /* StateMachineContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachineContext.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/StateMachine.swift /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		__PBXFileRef_StateMachine.xcodeproj/Configs/Project.xcconfig /* StateMachine.xcodeproj/Configs/Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StateMachine.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/StateMachineTests/StateMachineTests.swift /* StateMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineTests.swift; sourceTree = "<group>"; };
+		"_____Product_StateMachine" /* StateMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StateMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_StateMachineTests" /* StateMachineTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = StateMachineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F7619FDC1D7FAD89002C8260 /* Frameworks */ = {
+		"___LinkPhase_StateMachine" /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7619FEA1D7FAE24002C8260 /* Frameworks */ = {
+		"___LinkPhase_StateMachineTests" /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
+				_LinkFileRef_StateMachine_via_StateMachineTests /* StateMachine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F7619FD41D7FAD56002C8260 = {
+		TestProducts_ /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F7619FE11D7FAD89002C8260 /* StateMachine */,
-				F7619FEE1D7FAE24002C8260 /* StateMachineTest */,
-				F7619FE01D7FAD89002C8260 /* Products */,
+				"_____Product_StateMachineTests" /* StateMachineTests.xctest */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Configs_" /* Configs */,
+				"_____Sources_" /* Sources */,
+				"_______Tests_" /* Tests */,
+				"____Products_" /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F7619FE01D7FAD89002C8260 /* Products */ = {
+		"____Products_" /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F7619FDF1D7FAD89002C8260 /* StateMachine */,
-				F7619FED1D7FAE24002C8260 /* StateMachineTest.xctest */,
+				TestProducts_ /* Tests */,
+				"_____Product_StateMachine" /* StateMachine.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F7619FE11D7FAD89002C8260 /* StateMachine */ = {
+		"_____Configs_" /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				F7619FE71D7FAD99002C8260 /* StateMachine.swift */,
-				F7B50A1F1D89EA3F005C124A /* State.swift */,
-				F7C0F4BA1D8A06E300D07D05 /* StatusProtocol.swift */,
-				F7B50A1C1D89EA1C005C124A /* StateMachineContext.swift */,
+				__PBXFileRef_StateMachine.xcodeproj/Configs/Project.xcconfig /* StateMachine.xcodeproj/Configs/Project.xcconfig */,
 			);
-			path = StateMachine;
+			name = Configs;
 			sourceTree = "<group>";
 		};
-		F7619FEE1D7FAE24002C8260 /* StateMachineTest */ = {
+		"_____Sources_" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F7619FEF1D7FAE24002C8260 /* StateMachineTest.swift */,
-				F7619FF11D7FAE24002C8260 /* Info.plist */,
+				"_______Group_StateMachine" /* StateMachine */,
 			);
-			path = StateMachineTest;
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_StateMachine" /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Sources/StateMachine.swift /* StateMachine.swift */,
+				F796D5891DC12D370031FEE5 /* State.swift */,
+				F796D58B1DC12D620031FEE5 /* StateMachineContext.swift */,
+			);
+			name = StateMachine;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_StateMachineTests" /* StateMachineTests */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Tests/StateMachineTests/StateMachineTests.swift /* StateMachineTests.swift */,
+			);
+			name = StateMachineTests;
+			path = Tests/StateMachineTests;
+			sourceTree = "<group>";
+		};
+		"_______Tests_" /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_StateMachineTests" /* StateMachineTests */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F7619FDE1D7FAD89002C8260 /* StateMachine */ = {
+		"______Target_StateMachine" /* StateMachine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F7619FE41D7FAD89002C8260 /* Build configuration list for PBXNativeTarget "StateMachine" */;
+			buildConfigurationList = "_______Confs_StateMachine" /* Build configuration list for PBXNativeTarget "StateMachine" */;
 			buildPhases = (
-				F7619FDB1D7FAD89002C8260 /* Sources */,
-				F7619FDC1D7FAD89002C8260 /* Frameworks */,
-				F7619FDD1D7FAD89002C8260 /* CopyFiles */,
+				CompilePhase_StateMachine /* Sources */,
+				"___LinkPhase_StateMachine" /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -114,360 +142,187 @@
 			);
 			name = StateMachine;
 			productName = StateMachine;
-			productReference = F7619FDF1D7FAD89002C8260 /* StateMachine */;
-			productType = "com.apple.product-type.tool";
+			productReference = "_____Product_StateMachine" /* StateMachine.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		F7619FEC1D7FAE24002C8260 /* StateMachineTest */ = {
+		"______Target_StateMachineTests" /* StateMachineTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F7619FF21D7FAE24002C8260 /* Build configuration list for PBXNativeTarget "StateMachineTest" */;
+			buildConfigurationList = "_______Confs_StateMachineTests" /* Build configuration list for PBXNativeTarget "StateMachineTests" */;
 			buildPhases = (
-				F7619FE91D7FAE24002C8260 /* Sources */,
-				F7619FEA1D7FAE24002C8260 /* Frameworks */,
-				F7619FEB1D7FAE24002C8260 /* Resources */,
+				CompilePhase_StateMachineTests /* Sources */,
+				"___LinkPhase_StateMachineTests" /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				__Dependency_StateMachine /* PBXTargetDependency */,
 			);
-			name = StateMachineTest;
-			productName = StateMachineTest;
-			productReference = F7619FED1D7FAE24002C8260 /* StateMachineTest.xctest */;
+			name = StateMachineTests;
+			productName = StateMachineTests;
+			productReference = "_____Product_StateMachineTests" /* StateMachineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F7619FD51D7FAD56002C8260 /* Project object */ = {
+		__RootObject_ /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
-				TargetAttributes = {
-					F7619FDE1D7FAD89002C8260 = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
-					};
-					F7619FEC1D7FAE24002C8260 = {
-						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
-					};
-				};
+				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = F7619FD81D7FAD56002C8260 /* Build configuration list for PBXProject "StateMachine" */;
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "StateMachine" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F7619FD41D7FAD56002C8260;
-			productRefGroup = F7619FE01D7FAD89002C8260 /* Products */;
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F7619FDE1D7FAD89002C8260 /* StateMachine */,
-				F7619FEC1D7FAE24002C8260 /* StateMachineTest */,
+				"______Target_StateMachine" /* StateMachine */,
+				"______Target_StateMachineTests" /* StateMachineTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		F7619FEB1D7FAE24002C8260 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		F7619FDB1D7FAD89002C8260 /* Sources */ = {
+		CompilePhase_StateMachine /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				F7619FE81D7FAD99002C8260 /* StateMachine.swift in Sources */,
-				F7B50A1D1D89EA1C005C124A /* StateMachineContext.swift in Sources */,
-				F7C0F4BB1D8A06E300D07D05 /* StatusProtocol.swift in Sources */,
-				F7B50A201D89EA3F005C124A /* State.swift in Sources */,
+				F796D58C1DC12D620031FEE5 /* StateMachineContext.swift in Sources */,
+				__src_cc_ref_Sources/StateMachine.swift /* StateMachine.swift in Sources */,
+				F796D58A1DC12D370031FEE5 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7619FE91D7FAE24002C8260 /* Sources */ = {
+		CompilePhase_StateMachineTests /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				F7B50A1E1D89EA28005C124A /* StateMachineContext.swift in Sources */,
-				F7619FF01D7FAE24002C8260 /* StateMachineTest.swift in Sources */,
-				F7619FF51D7FAE2B002C8260 /* StateMachine.swift in Sources */,
-				F7B50A211D89EA3F005C124A /* State.swift in Sources */,
-				F7C0F4BC1D8A06F900D07D05 /* StatusProtocol.swift in Sources */,
+				__src_cc_ref_Tests/StateMachineTests/StateMachineTests.swift /* StateMachineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		__Dependency_StateMachine /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_StateMachine" /* StateMachine */;
+			targetProxy = F796D5881DC12CF60031FEE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		F7619FD91D7FAD56002C8260 /* Debug */ = {
+		_ReleaseConf_StateMachine /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
-			};
-			name = Debug;
-		};
-		F7619FDA1D7FAD56002C8260 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = StateMachine.xcodeproj/StateMachine_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = StateMachine;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		F7619FE51D7FAD89002C8260 /* Debug */ = {
+		_ReleaseConf_StateMachineTests /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = StateMachine.xcodeproj/StateMachineTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		"___DebugConf_StateMachine" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = StateMachine.xcodeproj/StateMachine_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = StateMachine;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		F7619FE61D7FAD89002C8260 /* Release */ = {
+		"___DebugConf_StateMachineTests" /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		F7619FF31D7FAE24002C8260 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = StateMachineTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.StateMachineTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = StateMachine.xcodeproj/StateMachineTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		F7619FF41D7FAE24002C8260 /* Release */ = {
+		"_____Release_" /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_StateMachine.xcodeproj/Configs/Project.xcconfig /* StateMachine.xcodeproj/Configs/Project.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = StateMachineTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.StateMachineTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_StateMachine.xcodeproj/Configs/Project.xcconfig /* StateMachine.xcodeproj/Configs/Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F7619FD81D7FAD56002C8260 /* Build configuration list for PBXProject "StateMachine" */ = {
+		"___RootConfs_" /* Build configuration list for PBXProject "StateMachine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F7619FD91D7FAD56002C8260 /* Debug */,
-				F7619FDA1D7FAD56002C8260 /* Release */,
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		F7619FE41D7FAD89002C8260 /* Build configuration list for PBXNativeTarget "StateMachine" */ = {
+		"_______Confs_StateMachine" /* Build configuration list for PBXNativeTarget "StateMachine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F7619FE51D7FAD89002C8260 /* Debug */,
-				F7619FE61D7FAD89002C8260 /* Release */,
+				"___DebugConf_StateMachine" /* Debug */,
+				_ReleaseConf_StateMachine /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		F7619FF21D7FAE24002C8260 /* Build configuration list for PBXNativeTarget "StateMachineTest" */ = {
+		"_______Confs_StateMachineTests" /* Build configuration list for PBXNativeTarget "StateMachineTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F7619FF31D7FAE24002C8260 /* Debug */,
-				F7619FF41D7FAE24002C8260 /* Release */,
+				"___DebugConf_StateMachineTests" /* Debug */,
+				_ReleaseConf_StateMachineTests /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F7619FD51D7FAD56002C8260 /* Project object */;
+	rootObject = __RootObject_ /* Project object */;
 }

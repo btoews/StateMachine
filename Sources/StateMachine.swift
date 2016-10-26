@@ -1,16 +1,16 @@
 //
-//  StateMachine.swift
+//  State.swift
 //  StateMachine
 //
-//  Created by Benjamin P Toews on 9/7/16.
+//  Created by Benjamin P Toews on 10/26/16.
 //
 //
 
 import Foundation
 
-class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
-    typealias StateType  = State<ContextType, StatusType>
-    typealias Subscriber = (_ status: StatusType) -> Void
+public class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
+    public typealias StateType  = State<ContextType, StatusType>
+    public typealias Subscriber = (_ status: StatusType) -> Void
     
     var current: StateType?
     var failure: StateType.Type?
@@ -28,10 +28,7 @@ class StateMachine<ContextType: StateMachineContext, StatusType>: NSObject {
     
     // Go to failure state.
     func fail(_ message: String) {
-        print("Failing at \(currentName) because \(message)")
-        
         guard let next = failure else {
-            print("No failure state. State machine finished.")
             return
         }
         

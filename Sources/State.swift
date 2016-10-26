@@ -2,27 +2,25 @@
 //  State.swift
 //  StateMachine
 //
-//  Created by Benjamin P Toews on 9/14/16.
+//  Created by Benjamin P Toews on 10/26/16.
 //
 //
 
-import Foundation
-
-class State<ContextType: StateMachineContext, StatusType> {
-    typealias MachineType  = StateMachine<ContextType, StatusType>
-    typealias EventHandler = () -> Void
+public class State<ContextType: StateMachineContext, StatusType> {
+    public typealias MachineType  = StateMachine<ContextType, StatusType>
+    public typealias EventHandler = () -> Void
     
     let machine: MachineType
     var eventHandlers: [String:EventHandler] = [:]
     var context: ContextType { return machine.context }
     
-    required init(_ m: MachineType) {
+    required public init(_ m: MachineType) {
         machine = m
     }
     
     // Callback when entering state.
     func enter() {}
- 
+    
     // Callback when exiting state.
     func exit() {}
     
@@ -46,3 +44,4 @@ class State<ContextType: StateMachineContext, StatusType> {
         eventHandlers[name] = function
     }
 }
+

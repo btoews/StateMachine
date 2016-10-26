@@ -1,12 +1,5 @@
-//
-//  StateMachineTest.swift
-//  StateMachineTest
-//
-//  Created by Benjamin P Toews on 9/7/16.
-//
-//
-
 import XCTest
+@testable import StateMachine
 
 class TestContext: StateMachineContext {
     var history = [String]()
@@ -77,7 +70,8 @@ class TestStateTwo: TestState {
     }
 }
 
-class StateMachineTest: XCTestCase {
+
+class StateMachineTests: XCTestCase {
     func testTestStateMachineInit() {
         var statusHistory:[TestStatus] = []
         
@@ -118,4 +112,3 @@ class StateMachineTest: XCTestCase {
         XCTAssertEqual(["tsm init", "ts1 enter", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 testEvent", "ts1 exit", "ts2 enter", "ts2 exit", "ts1 enter", "ts1 failEvent", "ts1 exit", "ts1 enter", "tsm reset"], sm.context.history)
     }
 }
-

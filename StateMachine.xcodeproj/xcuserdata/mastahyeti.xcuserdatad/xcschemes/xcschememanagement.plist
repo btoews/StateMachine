@@ -2,27 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>StateMachine.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>StateMachineTest.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>F7619FDE1D7FAD89002C8260</key>
+		<key>______Target_StateMachine</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7619FEC1D7FAE24002C8260</key>
+		<key>______Target_StateMachineTests</key>
 		<dict>
 			<key>primary</key>
 			<true/>
